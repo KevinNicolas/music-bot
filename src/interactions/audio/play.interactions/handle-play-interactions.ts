@@ -29,7 +29,8 @@ export const handlePlayInteractions = async (interaction: ChatInputCommandIntera
   if (Array.isArray(song)) queue.addTracks(song);
   else queue.addTrack(song);
 
-  const currentSong = queue.current;
+  let currentSong = queue.current;
+  if (!Array.isArray(song)) currentSong = song;
   const embed = createEmbedMessage({ duration: currentSong.duration, thumbnail: currentSong.thumbnail, title: currentSong.title, url: currentSong.url });
 
   if (!queue.playing) await queue.play();
