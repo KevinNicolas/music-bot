@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "packageManager": "yarn@1.22.19",
   "author": {
     "email": "nicolaskevinleguiza@gmail.com",
     "name": "Kevin Nicolas Leguiza Gaggero",
     "url": "https://github.com/KevinNicolas"
   },
+  "engines": {
+    "node": "19"
+  },
   "scripts": {
-    "start": "npm run build && node ./dist/bundle.js",
+    "start": "node ./dist/bundle.js",
     "build": "rm -rf ./dist && node ./esbuild.config.js",
     "dev": "ts-node ./src/main.ts"
   },
